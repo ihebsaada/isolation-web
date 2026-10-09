@@ -1,0 +1,30 @@
+/* Shared form transitions: no simulated loading, native CSS/React only. */
+.lead-form-height{transition:height 260ms cubic-bezier(.22,.8,.3,1);overflow:clip;padding:6px;margin:-6px}.lead-form-stage{display:flow-root}.lead-form-stage h2:focus,.lead-form-stage h3:focus{outline:2px solid var(--forest);outline-offset:4px}.lead-form-stage.phase-exit-forward{animation:formExitForward 120ms cubic-bezier(.22,.8,.3,1) both}.lead-form-stage.phase-exit-backward{animation:formExitBackward 120ms cubic-bezier(.22,.8,.3,1) both}.lead-form-stage.phase-enter-forward{animation:formEnterForward 160ms cubic-bezier(.22,.8,.3,1) both}.lead-form-stage.phase-enter-backward{animation:formEnterBackward 160ms cubic-bezier(.22,.8,.3,1) both}.lead-form-stage.phase-success-exit{animation:formSuccessExit 120ms ease both}.lead-form-stage.phase-success-enter{animation:formSuccessEnter 200ms cubic-bezier(.22,.8,.3,1) both}.lead-form-stage[aria-hidden=true]{pointer-events:none}.lead-form-panel .progress-track span{transition:width 260ms cubic-bezier(.22,.8,.3,1)}.lead-form-panel .progress-hint{min-height:17px;font-size:13px;color:var(--muted);margin:8px 0 0}.lead-form-panel .button:active{transform:translateY(1px)}.lead-form-panel .button:hover>span:not(.loading-spinner){transform:translateX(2px)}.lead-form-panel .form-fields:disabled{opacity:1}.lead-form-panel .form-error-summary{animation:formErrorIn 120ms ease-out}.lead-form-panel .loading-status:empty{display:none}.lead-form-panel .result-icon.neutral{font-size:22px}.lead-form-panel .result{min-height:0}.lead-form-panel .result .button{margin-top:22px}.lead-form-panel .field{margin-top:17px}
+@keyframes formExitForward{to{opacity:0;transform:translateX(-20px)}}@keyframes formExitBackward{to{opacity:0;transform:translateX(20px)}}@keyframes formEnterForward{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}@keyframes formEnterBackward{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}@keyframes formSuccessExit{to{opacity:0}}@keyframes formSuccessEnter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@keyframes formErrorIn{from{opacity:.4}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.lead-form-height,.lead-form-panel .progress-track span{transition:none}.lead-form-stage[class*="phase-"],.lead-form-panel .form-error-summary{animation:none}.lead-form-panel .button:active{transform:none}}
+
+/* Final Isolation form finish: presentation only. */
+.lead-form-panel{border-color:#c7beb0;box-shadow:0 2px 5px #2b2a2703,0 16px 42px #2b2a2709,inset 0 1px 0 #ffffffb3;border-radius:3px}
+.lead-form-panel .form-progress{align-items:baseline;line-height:1.5;gap:12px}
+.lead-form-panel .form-progress>span:first-child{color:#87502e;font-weight:600;white-space:nowrap}
+.lead-form-panel .form-progress>span:last-child{color:var(--muted);text-align:right}
+.lead-form-panel .progress-track{height:5px;border-radius:8px;overflow:hidden;background:#e7dfd1;margin-top:13px}
+.lead-form-panel .progress-track span{border-radius:inherit;background:linear-gradient(90deg,#985728,var(--thermal));box-shadow:inset 0 1px 0 #ffffff30}
+.lead-form-panel .field input,.lead-form-panel .field select,.lead-form-panel .choice{border-radius:2px;transition:border-color 180ms ease,box-shadow 180ms ease,background-color 180ms ease}
+.lead-form-panel .field input:hover,.lead-form-panel .field select:hover,.lead-form-panel .choice:hover{border-color:var(--forest)}
+.lead-form-panel .field input:focus-visible,.lead-form-panel .field select:focus-visible,.lead-form-panel button:focus-visible{outline:2px solid var(--forest);outline-offset:3px;box-shadow:0 0 0 5px #33483b0d}
+.lead-form-panel .choice:has(input:focus-visible){outline:2px solid var(--forest);outline-offset:3px;box-shadow:0 0 0 5px #33483b0d}
+.lead-form-panel .choice input:focus-visible{outline:none}
+.lead-form-panel .choice.selected{border-color:var(--forest);box-shadow:inset 3px 0 0 var(--thermal)}
+.lead-form-panel .button{border:1px solid #ffffff12;border-radius:2px;box-shadow:0 2px 3px #2b2a2708;transition:background-color 180ms ease,box-shadow 180ms ease,transform 180ms cubic-bezier(.22,.8,.3,1)}
+.lead-form-panel .button>span:not(.loading-spinner){transition:transform 180ms cubic-bezier(.22,.8,.3,1);color:#e8c3a5}
+.lead-form-panel .button:hover{background:#293e31;box-shadow:0 4px 12px #33483b1a}
+.lead-form-panel .button:active{background:#223428;box-shadow:inset 0 2px 4px #00000016;transform:translateY(1px)}
+.lead-form-panel .back{padding-inline:8px;min-width:44px;border-radius:2px;transition:background-color 180ms ease}
+.lead-form-panel .back:hover{background:#d8cbb633}
+.lead-form-panel .inline-error,.lead-form-panel .error{overflow-wrap:anywhere}
+.lead-form-panel .fine-print{border-left:2px solid #c97a4566;padding-left:10px}
+@media(max-width:700px){.lead-form-panel .field input,.lead-form-panel .field select{font-size:16px}.lead-form-panel .form-progress{font-size:12px}.lead-form-panel .form-actions{row-gap:10px}.lead-form-panel .progress-hint{font-size:13px;line-height:1.55}.lead-form-panel .consent{padding-block:4px}}
+@media(max-width:360px){.lead-form-panel .form-progress{font-size:12px;gap:8px}.lead-form-panel h2{font-size:24px}.lead-form-panel .form-actions .button{min-height:52px}.lead-form-panel .back{padding-inline:8px}}
+@media(prefers-reduced-motion:reduce){.lead-form-panel .field input,.lead-form-panel .field select,.lead-form-panel .choice,.lead-form-panel .button,.lead-form-panel .button>span,.lead-form-panel .back{transition:none}.lead-form-panel .button:active,.lead-form-panel .button:hover>span:not(.loading-spinner){transform:none}}
+@media(max-width:360px){.lead-form-panel .field select{font-size:14px;padding-inline:8px}}
