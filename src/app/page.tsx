@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { Brand, CTA } from '@/components/brand';
 import { needs, benefits, process } from '@/data/isolation';
+import { publicMetadata } from '@/lib/seo';
+export const metadata = publicMetadata('/');
 export default function Home() { return <>
   <a className="skip-link" href="#contenu">Aller au contenu</a>
   <header className="header wrap"><Brand/><nav aria-label="Navigation principale"><a href="#approche">Notre approche</a><CTA/></nav></header>
