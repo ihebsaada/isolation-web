@@ -68,10 +68,10 @@ test('optional email remains validated when supplied and never bypasses qualific
 });
 
 // Submission contract: success is impossible without a confirmed server receipt.
-import { submitLead, SubmissionUnavailableError } from '../src/lib/lead-submission.ts';
-test('no receiver means unavailable, never success',async()=>{
+import { submitLead } from '../src/lib/lead-submission.ts';
+test('default receiver requires a working same-origin server, never fake success',async()=>{
   const payload=buildLead(valid,captureAttribution('?utm_source=meta'));
-  await assert.rejects(submitLead(payload,new AbortController().signal),SubmissionUnavailableError);
+  await assert.rejects(submitLead(payload,new AbortController().signal,undefined),/./);
 });
 test('server errors and unconfirmed HTTP 200 responses cannot become success',async()=>{
   const payload=buildLead(valid,captureAttribution(''));

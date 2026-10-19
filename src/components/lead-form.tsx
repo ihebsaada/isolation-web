@@ -5,6 +5,7 @@ import { leadReceiver, submitLead, type LeadPayload } from '@/lib/lead-submissio
 import './lead-form.css';
 import { steps, hooks } from '@/data/isolation';
 import { firstInvalidField } from '@/lib/validation';
+import { trackReceipt } from '@/lib/meta';
 
 
 
@@ -34,6 +35,7 @@ export function LeadForm({ variant = 'embedded' }: { variant?: 'embedded' | 'sta
   const request = useRef<AbortController | null>(null);
   const pendingLead = useRef<LeadPayload | null>(null);
   const mounted = useRef(true);
+  const honeypot = useRef<HTMLInputElement>(null);
   const invalidField = error ? firstInvalidField(view.step, project) : null;
   const fieldError = (key: keyof Project) => invalidField === key ? <span className="inline-error" id={`${key}-error`}>{error}</span> : null;
   const invalidProps = (key: keyof Project) => ({'aria-invalid': invalidField === key || undefined, 'aria-describedby': invalidField === key ? `${key}-error` : undefined});
@@ -94,7 +96,9 @@ export function LeadForm({ variant = 'embedded' }: { variant?: 'embedded' | 'sta
     setProject(p => ({ ...p, [key]: value })); setError(null); pendingLead.current = null;
   };
   const submit = async () => {
-    const payload = pendingLead.current ?? buildLead(project, attribution.current);
+    let saved = {};
+    try { saved = JSON.parse(sessionStorage.getItem('lead-attribution') || '{}'); } catch {}
+    const payload = pendingLead.current ?? {...buildLead(project, attribution.current), ...saved, website:honeypot.current?.value || '', landing_path:(saved as {landing_path?:string}).landing_path || location.pathname, referrer:(saved as {referrer?:string}).referrer || document.referrer.slice(0,500)};
     pendingLead.current = payload;
     // No fake loading or successful receipt when no real receiver is configured.
     if (!leadReceiver) {
@@ -105,7 +109,8 @@ export function LeadForm({ variant = 'embedded' }: { variant?: 'embedded' | 'sta
     const controller = new AbortController(); request.current = controller;
     const timeout = setTimeout(() => controller.abort(), 15000);
     try {
-      await submitLead(payload, controller.signal);
+      const receipt = await submitLead(payload, controller.signal);
+      trackReceipt(receipt.lead_id, receipt.qualification_status);
       if (!mounted.current) return;
       locked.current = false; setLoading(false);
       navigate({ step: 3, outcome: 'success', lead: payload }, 'forward');
@@ -136,7 +141,7 @@ export function LeadForm({ variant = 'embedded' }: { variant?: 'embedded' | 'sta
     <div ref={frame} className="lead-form-height"><div ref={stage} className={`lead-form-stage phase-${phase}`} onAnimationEnd={animationFinished} inert={moving || undefined}>
       {view.outcome && view.lead ? <div className="result"><span className={`result-icon ${view.outcome === 'excluded' ? 'neutral' : ''}`} aria-hidden="true">{view.outcome === 'success' ? '✓' : '—'}</span><Heading tabIndex={-1} ref={heading}>{view.outcome === 'success' ? 'Votre demande a bien été reçue.' : 'Merci pour ces précisions.'}</Heading><p>{view.outcome === 'success' ? 'Vous pourrez être contacté au sujet de votre estimation.' : qualificationMessage(view.lead.classification)}</p>{view.outcome === 'excluded' && <button className="button" onClick={() => navigate({ step: 0, outcome: null, lead: null }, 'backward')}>Modifier mes réponses <span aria-hidden="true">→</span></button>}</div> : <>
       <Heading ref={heading} tabIndex={-1}>{hooks[step]}</Heading>
-      <form onSubmit={e => { e.preventDefault(); next(); }} noValidate aria-busy={loading} aria-describedby={error ? 'form-error' : undefined}><fieldset className="form-fields" disabled={loading || moving}><legend className="sr-only">{steps[step]}</legend>
+      <form onSubmit={e => { e.preventDefault(); next(); }} noValidate aria-busy={loading} aria-describedby={error ? 'form-error' : undefined}><div hidden aria-hidden="true"><label>Website<input ref={honeypot} name="website" autoComplete="off" tabIndex={-1}/></label></div><fieldset className="form-fields" disabled={loading || moving}><legend className="sr-only">{steps[step]}</legend>
         {step === 0 && <><p>Indiquez où se trouve votre maison. Votre secteur sera vérifié avant toute transmission.</p><label className="field">Ville<input autoComplete="address-level2" {...invalidProps('city')} value={project.city} maxLength={100} onChange={e => update('city', e.target.value)} placeholder="Votre ville" required />{fieldError('city')}</label><label className="field">Code postal<input autoComplete="postal-code" {...invalidProps('postalCode')} value={project.postalCode} maxLength={7} onChange={e => update('postalCode', e.target.value)} placeholder="Ex. : H2X 1Y4" required />{fieldError('postalCode')}</label><p className="fine-print">Vérification du secteur par code postal.</p></>}
         {step === 1 && <><Choice legend="Êtes-vous propriétaire ?" error={invalidField === 'owner' ? error : null} value={project.owner} options={yesNo} onChange={v => update('owner', v)} /><Choice legend="S’agit-il d’une maison individuelle ?" error={invalidField === 'detached' ? error : null} value={project.detached} options={yesNo} onChange={v => update('detached', v)} />{(project.owner === 'non' || project.detached === 'non') && <p className="notice">Cette demande s’adresse aux propriétaires de maisons individuelles. Aucune coordonnée ne vous sera demandée si votre situation ne correspond pas à ces critères.</p>}</>}
         {step === 2 && <><Choice legend="Quelle partie de la maison souhaitez-vous améliorer ?" error={invalidField === 'need' ? error : null} value={project.need} options={needs.map(v => [v, v])} onChange={v => update('need', v)} /><label className="field">Quand envisagez-vous les travaux ?<select {...invalidProps('timing')} value={project.timing} onChange={e => update('timing', e.target.value)} required><option value="">Choisir un délai</option>{timings.map(v => <option key={v} value={v}>{v}</option>)}</select>{fieldError('timing')}</label><Choice legend="Souhaitez-vous être contacté au sujet de votre estimation ?" error={invalidField === 'estimate' ? error : null} value={project.estimate} options={yesNo} onChange={v => update('estimate', v)} /></>}
