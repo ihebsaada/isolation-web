@@ -79,9 +79,12 @@ The synchronous form lock prevents double clicks; loading disables controls. A r
 | `qualified` | `qualified` | Yes, after persistence only |
 | `low_intent` | `low_intent` | No |
 | `unqualified_owner`, `unqualified_property_type`, `out_of_area` | `rejected` | No |
+| `invalid` postal format | Rejected by validation; no Sheet row | No |
 | `null` / coverage pending | `low_intent`, `qualification_pending=true` | No |
 
-**Current `serviceCoverage` in `src/data/isolation.ts` is `{validated:false,postalCodes:[]}`. No current submission can truthfully become qualified.** Provide an approved exact postal-code list before enabling qualified-lead campaigns. No coverage was invented.
+**Service coverage now uses the 23 client-approved exact cities in `src/data/isolation.ts`.** City matching ignores case, accents, hyphen/space variations and whole-token Saint/St or Sainte/Ste abbreviations. Approved cities can qualify only with valid Canadian postal-code format and all existing ownership, property, intent, contact and consent requirements. Postal codes are stored uppercase without spaces. No prefix or radius grants qualification.
+
+Unlisted Québec locations, including Montréal, remain `low_intent` with `qualification_pending=true`; no proximity within Québec is inferred. An unlisted city with a clearly non-Québec postal code is `out_of_area`/`rejected`. Invalid postal format classifies as `invalid` and is blocked by form/server validation before persistence. City/postal-code address consistency is not verified by a geocoding service. The existing Sheet columns, exports and Meta event rules remain unchanged.
 
 The preserved UX ends non-homeowner/property/out-of-area and low-intent journeys before collecting contact details and consent. These exits are not submitted or tracked as leads. Server mapping of completed low-intent/rejected inputs is tested defensively, but storing every excluded journey would require changing that UX and deciding what data/consent to collect. This remains a scope decision if exhaustive capture is required.
 
@@ -118,7 +121,7 @@ Newest first; responsive cards; name/phone search; qualification and call-status
 
 - `npm.cmd run build`: PASS.
 - `npm.cmd run lint`: PASS, no warnings.
-- `npm.cmd test`: PASS, 25 tests.
+- `npm.cmd test`: PASS, 55 tests, including exact city coverage and normalization.
 - TypeScript: PASS, including final build type checking.
 - Local production HTTP smoke checks: `/leads` serves access screen without phone/lead content; unauthenticated list/update/export return 401; login without Origin returns 403.
 - Automated tests cover validation, qualified/low/rejected classification logic, missing consent, honeypot, normalization, all attribution keys, stable schema, filtering/search/order, CSV escaping, signed session/tamper/rotation, matching receipt/failure/timeout/abort, custom qualified conversion and deduplication.
@@ -134,7 +137,7 @@ Vercel Analytics and Speed Insights could be useful low-overhead additions after
 ## 13. Remaining blockers
 
 1. Actual Google Sheet, owner-authorized Apps Script deployment and secret configuration.
-2. Approved postal-code coverage; exhaustive excluded-journey capture decision if required.
+2. Manual review/approval of unlisted surrounding municipalities; exhaustive excluded-journey capture decision if required.
 3. Pixel ID, tracking activation/privacy requirements and Meta account verification.
 4. HTTPS preview/browser/mobile/performance checks and real-service acceptance tests.
 5. Explicit production deployment authorization after all checks pass.
@@ -143,7 +146,7 @@ Vercel Analytics and Speed Insights could be useful low-overhead additions after
 
 1. Create a restricted spreadsheet and Apps Script project. Paste `scripts/google-apps-script.gs`; set `SHEET_ID` and independent random `INTEGRATION_SECRET` in Script Properties. Deploy a Web App executing as the owner, accessible to Anyone. The endpoint authenticates every request using its server-held token; do not share it or the secret publicly. Authorize only the necessary spreadsheet access.
 2. Configure the three server-only Vercel variables. Match the integration secret. Keep Pixel disabled initially. Secrets must not be placed in NEXT_PUBLIC variables or committed files.
-3. Approve exact service-area postcodes and update `serviceCoverage` in `src/data/isolation.ts`. Re-run tests/build. Confirm the existing qualification rules and pending mapping meet campaign requirements.
+3. Review the 23 approved municipalities in `serviceCoverage` in `src/data/isolation.ts`. Keep unlisted municipalities pending until explicitly approved; do not expand by radius or postal prefix. Confirm the qualification rules and pending mapping meet campaign requirements.
 4. On an explicitly authorized HTTPS preview, run the mission's full 32-item checklist against a test Sheet. Verify append, duplicate retries, row movement, status/notes updates, filtered CSV, correct/wrong login, rate limits, refresh, logout and unauthenticated APIs. Simulate Google failure and confirm no success/conversion.
 5. Configure Pixel ID and enable only when ready; rebuild the preview because NEXT_PUBLIC values are compiled into the client. Verify PageView and ViewContent exactly once per page visit, Lead only after persistence, QualifiedLead only for qualified, and no duplicates on refresh/double-click in Meta Test Events. Confirm no external GTM/Event Setup Tool duplicates.
 6. Perform mobile submission, desktop/mobile viewer checks, console hydration check and before/after Lighthouse/Web Vitals comparison. Resolve issues and rerun required checks.

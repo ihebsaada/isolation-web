@@ -3,21 +3,21 @@ import test from 'node:test';
 import { emptyProject, classify, validateStep, captureAttribution, buildLead, coverageStatus, attributionKeys } from '../src/lib/leads.ts';
 const valid = { ...emptyProject, city: 'Ville test', postalCode: 'H2X 1Y4', owner: 'oui', detached: 'oui', need: 'Grenier / combles', timing: 'Dans 1 à 3 mois', estimate: 'oui', name: 'Test Projet', phone: '514 555-0123', email: 'test@example.com', consent: true };
 // Synthetic test coverage only; never used by the landing.
-const coverage={validated:true,postalCodes:['H2X1Y4']};
+const coverage={validated:true,cities:['Ville test']};
 test('all five qualification statuses and deterministic priority',()=>{
   assert.equal(classify(valid,coverage),'qualified');
   assert.equal(classify({...valid,owner:'non'},coverage),'unqualified_owner');
   assert.equal(classify({...valid,detached:'non'},coverage),'unqualified_property_type');
-  assert.equal(classify({...valid,postalCode:'M5V 2T6'},coverage),'out_of_area');
+  assert.equal(classify({...valid,city:'Toronto',postalCode:'M5V 2T6'},coverage),'out_of_area');
   assert.equal(classify({...valid,timing:'Je me renseigne pour le moment'},coverage),'low_intent');
   assert.equal(classify({...valid,estimate:'non'},coverage),'low_intent');
   assert.equal(classify({...valid,owner:'non',detached:'non',estimate:'non'},coverage),'unqualified_owner');
 });
 test('unconfirmed geography cannot qualify or falsely reject a location',()=>{
   assert.equal(classify(valid),null);
-  assert.equal(coverageStatus(valid.postalCode),'pending');
-  assert.equal(coverageStatus('h2x 1y4',coverage),'inside');
-  assert.equal(coverageStatus('H2X 1Y5',coverage),'outside');
+  assert.equal(coverageStatus(valid.city,valid.postalCode),'pending');
+  assert.equal(coverageStatus(valid.city,'h2x 1y4',coverage),'inside');
+  assert.equal(coverageStatus('Toronto','M5V 2T6',coverage),'outside');
 });
 test('disqualifying answers work before collecting contact information',()=>{
   assert.equal(classify({...emptyProject,owner:'non'}),'unqualified_owner');
@@ -57,7 +57,7 @@ test('optional email remains validated when supplied and never bypasses qualific
     assert.equal(classify({...valid,email,owner:'non'},coverage),'unqualified_owner');
     assert.equal(classify({...valid,email,detached:'non'},coverage),'unqualified_property_type');
     assert.equal(classify({...valid,email,timing:'Je me renseigne pour le moment'},coverage),'low_intent');
-    assert.equal(classify({...valid,email,postalCode:'M5V 2T6'},coverage),'out_of_area');
+    assert.equal(classify({...valid,email,city:'Toronto',postalCode:'M5V 2T6'},coverage),'out_of_area');
     assert.equal(classify({...valid,email,consent:false},coverage),null);
     assert.equal(classify({...valid,email,phone:''},coverage),null);
     assert.equal(classify({...valid,email,name:''},coverage),null);
