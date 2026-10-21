@@ -1,4 +1,5 @@
 import type { LeadRecord } from './lead-record.ts';
+import type { QualificationStatus } from './qualification-status.ts';
 
 export const callCenterColumns = [
   'Date', 'Nom', 'Téléphone', 'Email', 'Ville', 'Code postal', 'Propriétaire',
@@ -6,8 +7,8 @@ export const callCenterColumns = [
   'Statut appel', 'Notes', 'Source', 'Campagne', 'Créative',
 ] as const;
 
-const qualifications: Record<string, string> = {
-  qualified: 'Qualifié', low_intent: 'Faible intention', rejected: 'Rejeté',
+const qualifications: Record<QualificationStatus, string> = {
+  qualified: 'Qualifié', pending: 'À vérifier', low_intent: 'Faible intention', rejected: 'Rejeté',
 };
 const statuses: Record<string, string> = {
   new: 'Nouveau', contacted: 'Contacté', appointment: 'Rendez-vous',
@@ -42,7 +43,7 @@ export function callCenterCsv(rows: LeadRecord[]): string {
       row.postal_code, yesNo(row.homeowner),
       row.property_type === 'detached' ? 'Maison individuelle' : row.property_type === 'other' ? 'Autre' : row.property_type,
       row.insulation_need, row.project_timeline, yesNo(row.intent),
-      (qualifications[row.qualification_status] || row.qualification_status) +
+      (qualifications[row.qualification_status as QualificationStatus] || row.qualification_status) +
         (row.qualification_pending === 'true' ? ' — secteur à vérifier' : ''),
       statuses[row.call_status] || row.call_status, row.notes,
       row.utm_source || row.source, row.utm_campaign || row.campaign,

@@ -5,3 +5,5 @@
 @media(max-width:360px){.wrap{padding-inline:18px}.hero h1{font-size:38px}.header .button{max-width:165px;gap:5px}.header .button>span{display:none}.estimation-main{padding-inline:14px}.form-panel{padding-inline:16px}.estimation-heading h1{font-size:27px}.form-progress{font-size:11px}.form-actions{flex-wrap:wrap}.form-actions .button{min-width:100%}.back{order:2}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 .inline-error{display:block;color:#8b2922;font-size:14px;margin-top:6px}[aria-invalid=true]{border-color:#8b2922!important}
+
+.advertising-choice{padding:16px 24px;border-top:1px solid var(--rule);background:var(--surface);font-size:14px}.advertising-choice p{max-width:850px;margin-bottom:10px}.advertising-choice button{min-height:44px;padding:10px 16px;margin:4px 8px 4px 0;border:1px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}

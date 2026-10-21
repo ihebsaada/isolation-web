@@ -1,0 +1,21 @@
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center}
+.footer-links a,.privacy-return{display:inline-flex;align-items:center;min-height:44px}
+.footer-links a:hover,.privacy-return:hover{text-decoration:underline;text-underline-offset:4px}
+.privacy-summary{margin-top:20px;color:var(--muted);line-height:1.7}
+.privacy-summary a,.privacy-page a{text-decoration:underline;text-underline-offset:3px;color:var(--forest)}
+.privacy-page{max-width:960px;padding-block:56px 64px;overflow-wrap:anywhere}
+.privacy-page h1{font-size:clamp(38px,5vw,58px)}
+.privacy-intro{margin-top:18px;color:var(--muted);font-size:18px}
+.privacy-page section{margin-top:36px;padding-top:28px;border-top:1px solid var(--rule)}
+.privacy-page h2{font-size:28px;line-height:1.25;letter-spacing:-.025em;margin-bottom:18px}
+.privacy-page p+p{margin-top:16px}
+.privacy-page ul{padding-left:22px;margin:0}
+.privacy-page li+li{margin-top:12px}
+.privacy-page section>a{display:inline-flex;align-items:center;min-height:44px;margin-top:12px}
+.privacy-validation dl{margin:20px 0 0}
+.privacy-validation dt{font-weight:600;margin-top:18px}
+.privacy-validation dd{margin:4px 0 0;color:var(--muted)}
+#preferences-publicitaires{scroll-margin-top:24px}
+#preferences-publicitaires:focus-visible{outline:3px solid var(--forest);outline-offset:-3px}
+.advertising-choice{max-width:960px;margin-inline:auto}
+@media(max-width:700px){.footer-links{width:100%;gap:2px 20px}.privacy-page{padding-block:32px 40px}.privacy-page h2{font-size:25px}.privacy-return{font-size:14px}.privacy-page section{margin-top:28px;padding-top:22px}}

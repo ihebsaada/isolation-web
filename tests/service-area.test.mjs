@@ -40,7 +40,7 @@ test('safe exact normalization: accents, case, whitespace, hyphens and Saint abb
     ['St-Jérôme','saint jerome'],['Ste. Julie','sainte julie'],['SAINT–BRUNO de  Montarville','saint bruno de montarville'],
   ])assert.equal(normalizeCity(input),expected);
   for(const city of ['Châteauguay Sud','Lavaltrie','Laval-des-Rapides','Saint-Jean','St Bruno','Saint Jérôme Nord']) {
-    assert.equal(record({city}).qualification_status,'low_intent');
+    assert.equal(record({city}).qualification_status,'pending');
     assert.equal(record({city}).qualification_pending,'true');
   }
 });
@@ -48,7 +48,7 @@ test('safe exact normalization: accents, case, whitespace, hyphens and Saint abb
 test('Montréal and Montreal remain pending, never approved', () => {
   for(const city of ['Montréal','Montreal']){
     const result=record({city,postalCode:'H2X 1Y4'});
-    assert.equal(result.qualification_status,'low_intent');assert.equal(result.qualification_pending,'true');
+    assert.equal(result.qualification_status,'pending');assert.equal(result.qualification_pending,'true');
     assert.deepEqual(conversionEvents(result.qualification_status),['Lead']);
   }
 });
@@ -56,7 +56,7 @@ test('Montréal and Montreal remain pending, never approved', () => {
 test('unlisted Québec municipality remains pending without inferring proximity or expanding by prefix', () => {
   for(const postalCode of ['J0K 1A0','H7N 1A1','G1A 0A2']){
     const result=record({city:'Municipalité non confirmée',postalCode});
-    assert.equal(result.qualification_status,'low_intent');assert.equal(result.qualification_pending,'true');
+    assert.equal(result.qualification_status,'pending');assert.equal(result.qualification_pending,'true');
     assert.equal(classify({...project,city:'Municipalité non confirmée',postalCode}),null);
   }
 });

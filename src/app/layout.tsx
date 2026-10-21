@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './privacy.css';
 import PublicTracking from '@/components/public-tracking';
 import { SITE_URL } from '@/lib/seo';
 export const metadata:Metadata = {

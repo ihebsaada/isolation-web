@@ -1,0 +1,23 @@
+{
+  "retrievedAt": "2026-10-20T14:45:46.559Z",
+  "license": "CC BY 4.0",
+  "attribution": "Gouvernement du Québec — MAMH; MRNF; Institut de la statistique du Québec. Extraction et agrégation locale, sans approbation de couverture.",
+  "postalRecords": 240822,
+  "uniquePostalCodes": 220695,
+  "postalCodesSharedBetweenMunicipalities": 705,
+  "municipalEntities": 1281,
+  "anchorCount": 23,
+  "matrixRows": 130,
+  "candidates": 99,
+  "uncertainContacts": 1,
+  "territoriesToReview": 7,
+  "productionAdditions": 0,
+  "fileHashes": {
+    "MUN.csv": "e383724f26428cefd9069bb6452addfa7cde5236440d282c85f091963d38d5ce",
+    "cp-territoires.csv": "435fed4cfed01f0f1caec1aad2e4e9855e4e082ace1f39851e3a21433f295641",
+    "sda/anchors.json": "80179b3cc1b04f2ef75662a937a47b6ff879513a58fba7f69f7ec93cd40d5967",
+    "sda/candidate-polygons.json": "1c66ce39cdd29f78f738ff2db29e810745992431908e89f81d979ecf3372be3c"
+  },
+  "warning": "Coordinates identify the example postal record, not a municipal centroid or a customer address. Shared segments can be water boundaries. Absence of exact segment evidence is inconclusive.",
+  "referenceVersion": "c6041ce5425c11a83661c69bbbac71bdee71e09b60bc645ee55a3a0c1a5afcbf"
+}
