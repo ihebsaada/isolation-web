@@ -1,0 +1,85 @@
+{
+  "version": "c6041ce5425c11a83661c69bbbac71bdee71e09b60bc645ee55a3a0c1a5afcbf",
+  "attribution": "Gouvernement du Québec — MAMH; MRNF; Institut de la statistique du Québec. Extraction et agrégation locale, sans approbation de couverture.",
+  "source": "ISQ CP Territoires août 2026 + MAMH extraction 20 octobre 2026; subset for offline regression tests.",
+  "municipalities": {
+    "21020": {
+      "id": "21020",
+      "name": "Saint-Joachim",
+      "mrc": "MRC La Côte-de-Beaupré (210)",
+      "region": "Capitale-Nationale (03)",
+      "population": 1421
+    },
+    "21025": {
+      "id": "21025",
+      "name": "Beaupré",
+      "mrc": "MRC La Côte-de-Beaupré (210)",
+      "region": "Capitale-Nationale (03)",
+      "population": 4307
+    },
+    "21030": {
+      "id": "21030",
+      "name": "Sainte-Anne-de-Beaupré",
+      "mrc": "MRC La Côte-de-Beaupré (210)",
+      "region": "Capitale-Nationale (03)",
+      "population": 3167
+    },
+    "65005": {
+      "id": "65005",
+      "name": "Laval",
+      "mrc": "",
+      "region": "Laval (13)",
+      "population": 459650
+    },
+    "66023": {
+      "id": "66023",
+      "name": "Montréal",
+      "mrc": "",
+      "region": "Montréal (06)",
+      "population": 1913561
+    },
+    "67025": {
+      "id": "67025",
+      "name": "Delson",
+      "mrc": "MRC Roussillon (670)",
+      "region": "Montérégie (16)",
+      "population": 8802
+    }
+  },
+  "names": {
+    "saint joachim": [
+      "21020"
+    ],
+    "beaupre": [
+      "21025"
+    ],
+    "sainte anne de beaupre": [
+      "21030"
+    ],
+    "laval": [
+      "65005"
+    ],
+    "montreal": [
+      "66023"
+    ],
+    "delson": [
+      "67025"
+    ]
+  },
+  "postals": {
+    "H2X1Y4": [
+      "66023"
+    ],
+    "H7N1A1": [
+      "65005"
+    ],
+    "G0A1E0": [
+      "21020",
+      "21025",
+      "21030"
+    ],
+    "J5B0A1": [
+      "67025"
+    ]
+  }
+}

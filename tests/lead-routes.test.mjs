@@ -6,19 +6,26 @@ import vm from 'node:vm';
 import { createRequire } from 'node:module';
 import ts from 'typescript';
 import { columns } from '../src/lib/lead-record.ts';
+import { buildLead, captureAttribution, emptyProject } from '../src/lib/leads.ts';
+import { timings } from '../src/data/isolation.ts';
 
 // Execute the actual route/server/session modules with only the Next request
 // cookie context and external Google transport replaced by test doubles.
 function runtime(rows) {
   const require = createRequire(import.meta.url), cache = new Map();
   let cookie = '', unavailable = false;
-  const context = { process, Request, Response, URL, AbortSignal, Date,
+  const context = { process, Request, Response, URL, URLSearchParams, AbortSignal, Date, crypto: globalThis.crypto,
     fetch: async (_url, options) => {
       if (unavailable) throw Error('Synthetic storage failure');
       const body = JSON.parse(options.body);
       assert.equal(body.token, 'synthetic-integration-secret');
       if (body.action === 'loginAttempt') return Response.json({ok:true,allowed:true});
       if (body.action === 'list') return Response.json({ok:true,leads:rows});
+      if (body.action === 'append') {
+        const prior=rows.find(r=>r.lead_id===body.lead.lead_id);
+        if(!prior)rows.push(body.lead);
+        return Response.json({ok:true,lead:prior||body.lead});
+      }
       if (body.action === 'update') {
         const row=rows.find(r=>r.lead_id===body.lead_id);
         if(!row)return Response.json({ok:false});
@@ -90,7 +97,34 @@ test('actual lead routes: login, protected list, status/notes, both filtered exp
     }
     const foreign=new Request(base+'/api/leads',{method:'PATCH',headers:{origin:'http://evil.invalid'},body:'{}'});
     assert.equal((await leads.PATCH(foreign)).status,403);
+    const project={...emptyProject,city:'Montreal',postalCode:'H2X1Y4',owner:'YES',detached:true,
+      estimate:'true',need:'Sous-sol',timing:timings[0],name:'Synthetic Montreal',phone:'5145550123',consent:true};
+    const submission={...buildLead(project,captureAttribution('')),project,website:'',classification:'qualified'};
+    assert.doesNotThrow(()=>r.load('src/lib/lead-record.ts').makeRecord(submission));
+    const acceptedSubmission=await leads.POST(request('/api/leads','POST',submission));
+    assert.equal(acceptedSubmission.status,200);
+    const receipt=await acceptedSubmission.json();
+    assert.equal(receipt.accepted,true);assert.equal(receipt.qualification_status,'pending');
+    assert.equal(receipt.lead_id,submission.lead_id);
+    const saved=rows.find(r=>r.lead_id===receipt.lead_id);
+    assert.equal(saved.qualification_pending,'true');assert.equal(saved.intent,'oui');assert.equal(saved.call_status,'new');
+    const count=rows.length;
+    assert.equal((await leads.POST(request('/api/leads','POST',submission))).status,200);assert.equal(rows.length,count);
+    const pendingRows=await (await leads.GET(request('/api/leads?qualification=pending'))).json();
+    assert.equal(pendingRows.leads.length,1);assert.equal(pendingRows.leads[0].lead_id,receipt.lead_id);
+    assert.equal((await leads.PATCH(request('/api/leads','PATCH',{
+      lead_id:receipt.lead_id,call_status:'appointment',notes:'Synthetic verification required',
+    }))).status,200);
+    assert.equal(saved.qualification_status,'pending');assert.equal(saved.qualification_pending,'true');
+    const friendly=await (await exports.GET(request('/api/leads/export?qualification=pending&format=call-center'))).text();
+    assert.ok(friendly.includes('À vérifier'));assert.ok(friendly.includes('Synthetic Montreal'));
+    const technical=await (await exports.GET(request('/api/leads/export?qualification=pending'))).text();
+    assert.ok(technical.includes('"pending"'));
+    saved.qualification_status='qualified'; // Synthetic contradictory storage receipt.
+    assert.equal((await leads.POST(request('/api/leads','POST',submission))).status,503);
+    saved.qualification_status='pending';
     r.fail();assert.equal((await exports.GET(request('/api/leads/export?format=call-center'))).status,503);
+    assert.equal((await leads.POST(request('/api/leads','POST',submission))).status,503);
     assert.equal((await leads.GET(request('/api/leads'))).status,503);
     r.setCookie('');assert.equal((await leads.PATCH(request('/api/leads','PATCH',{}))).status,401);
   } finally {

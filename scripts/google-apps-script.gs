@@ -1,6 +1,7 @@
 // Paste into a bound Apps Script project. Configure Script Properties:
 // SHEET_ID, INTEGRATION_SECRET. Deploy Web App: execute as owner, access Anyone.
 const COLUMNS = ['lead_id','submitted_at','name','phone','email','city','postal_code','homeowner','property_type','insulation_need','project_timeline','intent','qualification_status','qualification_pending','consent','utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','landing_path','referrer','source','campaign','ad','creative','utm_id','call_status','notes'];
+const QUALIFICATION_STATUSES = ['qualified','pending','low_intent','rejected'];
 function doPost(e) {
   const lock = LockService.getScriptLock();
   try {
@@ -27,7 +28,7 @@ function doPost(e) {
     if(b.action==='list')return json({ok:true,leads:rows});
     if(b.action==='append'){
       const lead=b.lead;
-      if(!lead||!COLUMNS.every(k=>typeof lead[k]==='string'&&lead[k].length<=1000)||!/^[0-9a-f-]{36}$/i.test(lead.lead_id)||!['qualified','low_intent','rejected'].includes(lead.qualification_status)||lead.consent!=='true'||lead.call_status!=='new')throw Error('Invalid lead');
+      if(!lead||!COLUMNS.every(k=>typeof lead[k]==='string'&&lead[k].length<=1000)||!/^[0-9a-f-]{36}$/i.test(lead.lead_id)||!QUALIFICATION_STATUSES.includes(lead.qualification_status)||!['true','false'].includes(lead.qualification_pending)||(lead.qualification_status==='pending'&&lead.qualification_pending!=='true')||(lead.qualification_status==='qualified'&&lead.qualification_pending!=='false')||lead.consent!=='true'||lead.call_status!=='new')throw Error('Invalid lead');
       const prior=rows.find(r=>r.lead_id===lead.lead_id);
       if(prior)return json({ok:true,lead:prior});
       const row=sheet.getLastRow()+1;

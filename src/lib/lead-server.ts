@@ -1,5 +1,6 @@
 import { cookies } from "next/headers";
 import { cookieName, validSession } from "./lead-session.ts";
+import { qualificationStatuses } from './qualification-status.ts';
 export {
   cookieName,
   sessionSeconds,
@@ -33,9 +34,12 @@ export async function sheet(
     action === "append" &&
     (!result.lead ||
       result.lead.lead_id !== (data.lead as { lead_id: string }).lead_id ||
-      !["qualified", "low_intent", "rejected"].includes(
+      !qualificationStatuses.includes(
         result.lead.qualification_status,
-      ))
+      ) ||
+      !['true', 'false'].includes(result.lead.qualification_pending) ||
+      (result.lead.qualification_status === 'pending' && result.lead.qualification_pending !== 'true') ||
+      (result.lead.qualification_status === 'qualified' && result.lead.qualification_pending !== 'false'))
   )
     throw new Error("Unconfirmed persistence");
   if (action === "list" && !Array.isArray(result.leads))

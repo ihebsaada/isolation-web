@@ -1,0 +1,1852 @@
+{
+  "source": "https://servicescarto.mern.gouv.qc.ca/pes/rest/services/Territoire/SDA_WMS/MapServer/2",
+  "relation": "esriSpatialRelTouches",
+  "retrievedAt": "2026-10-20T14:45:46.559Z",
+  "note": "Touching entities only; shared-line evidence is computed separately from unmodified polygon segments. No approval, water crossing or road access is inferred.",
+  "anchors": [
+    {
+      "name": "Beauharnois",
+      "id": "70022"
+    },
+    {
+      "name": "Châteauguay",
+      "id": "67050"
+    },
+    {
+      "name": "Candiac",
+      "id": "67020"
+    },
+    {
+      "name": "Saint-Jean-sur-Richelieu",
+      "id": "56083"
+    },
+    {
+      "name": "Granby",
+      "id": "47017"
+    },
+    {
+      "name": "Sherbrooke",
+      "id": "43027"
+    },
+    {
+      "name": "Drummondville",
+      "id": "49058"
+    },
+    {
+      "name": "Varennes",
+      "id": "59020"
+    },
+    {
+      "name": "Beloeil",
+      "id": "57040"
+    },
+    {
+      "name": "Sainte-Julie",
+      "id": "59010"
+    },
+    {
+      "name": "Saint-Bruno-de-Montarville",
+      "id": "58037"
+    },
+    {
+      "name": "Chambly",
+      "id": "57005"
+    },
+    {
+      "name": "Laval",
+      "id": "65005"
+    },
+    {
+      "name": "Pointe-Calumet",
+      "id": "72020"
+    },
+    {
+      "name": "Deux-Montagnes",
+      "id": "72010"
+    },
+    {
+      "name": "Saint-Eustache",
+      "id": "72005"
+    },
+    {
+      "name": "Boisbriand",
+      "id": "73005"
+    },
+    {
+      "name": "Mirabel",
+      "id": "74005"
+    },
+    {
+      "name": "Saint-Jérôme",
+      "id": "75017"
+    },
+    {
+      "name": "Terrebonne",
+      "id": "64008"
+    },
+    {
+      "name": "Repentigny",
+      "id": "60013"
+    },
+    {
+      "name": "Joliette",
+      "id": "61025"
+    },
+    {
+      "name": "Rawdon",
+      "id": "62037"
+    }
+  ],
+  "adjacency": [
+    {
+      "anchor": {
+        "name": "Beauharnois",
+        "id": "70022"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "67990",
+          "MUS_NM_MUN": "TNO aquatique de la MRC de Roussillon",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "70035",
+          "MUS_NM_MUN": "Saint-Louis-de-Gonzague",
+          "MUS_CO_MRC": "70",
+          "MUS_NM_MRC": "Beauharnois-Salaberry",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "70030",
+          "MUS_NM_MUN": "Saint-Étienne-de-Beauharnois",
+          "MUS_CO_MRC": "70",
+          "MUS_NM_MRC": "Beauharnois-Salaberry",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "70990",
+          "MUS_NM_MUN": "TNO aquatique de la MRC de Beauharnois-Salaberry",
+          "MUS_CO_MRC": "70",
+          "MUS_NM_MRC": "Beauharnois-Salaberry",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67055",
+          "MUS_NM_MUN": "Léry",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "70012",
+          "MUS_NM_MUN": "Sainte-Martine",
+          "MUS_CO_MRC": "70",
+          "MUS_NM_MRC": "Beauharnois-Salaberry",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "70052",
+          "MUS_NM_MUN": "Salaberry-de-Valleyfield",
+          "MUS_CO_MRC": "70",
+          "MUS_NM_MRC": "Beauharnois-Salaberry",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67050",
+          "MUS_NM_MUN": "Châteauguay",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "71065",
+          "MUS_NM_MUN": "Notre-Dame-de-l'Île-Perrot",
+          "MUS_CO_MRC": "71",
+          "MUS_NM_MRC": "Vaudreuil-Soulanges",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Châteauguay",
+        "id": "67050"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "67802",
+          "MUS_NM_MUN": "Kahnawake",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67990",
+          "MUS_NM_MUN": "TNO aquatique de la MRC de Roussillon",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67040",
+          "MUS_NM_MUN": "Saint-Isidore",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67940",
+          "MUS_NM_MUN": "TNO terrestre de la MRC de Roussillon",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67045",
+          "MUS_NM_MUN": "Mercier",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "70022",
+          "MUS_NM_MUN": "Beauharnois",
+          "MUS_CO_MRC": "70",
+          "MUS_NM_MRC": "Beauharnois-Salaberry",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67055",
+          "MUS_NM_MUN": "Léry",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "70012",
+          "MUS_NM_MUN": "Sainte-Martine",
+          "MUS_CO_MRC": "70",
+          "MUS_NM_MRC": "Beauharnois-Salaberry",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Candiac",
+        "id": "67020"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "67010",
+          "MUS_NM_MUN": "Saint-Philippe",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67005",
+          "MUS_NM_MUN": "Saint-Mathieu",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67990",
+          "MUS_NM_MUN": "TNO aquatique de la MRC de Roussillon",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67035",
+          "MUS_NM_MUN": "Saint-Constant",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67025",
+          "MUS_NM_MUN": "Delson",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67015",
+          "MUS_NM_MUN": "La Prairie",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Saint-Jean-sur-Richelieu",
+        "id": "56083"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "67010",
+          "MUS_NM_MUN": "Saint-Philippe",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57005",
+          "MUS_NM_MUN": "Chambly",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57010",
+          "MUS_NM_MUN": "Carignan",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "56055",
+          "MUS_NM_MUN": "Saint-Alexandre",
+          "MUS_CO_MRC": "56",
+          "MUS_NM_MRC": "Le Haut-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "55057",
+          "MUS_NM_MUN": "Richelieu",
+          "MUS_CO_MRC": "55",
+          "MUS_NM_MRC": "Rouville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "58007",
+          "MUS_NM_MUN": "Brossard",
+          "MUS_CO_MRC": "58",
+          "MUS_NM_MRC": "Longueuil",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "56097",
+          "MUS_NM_MUN": "Mont-Saint-Grégoire",
+          "MUS_CO_MRC": "56",
+          "MUS_NM_MRC": "Le Haut-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "56060",
+          "MUS_NM_MUN": "Sainte-Anne-de-Sabrevois",
+          "MUS_CO_MRC": "56",
+          "MUS_NM_MRC": "Le Haut-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "68040",
+          "MUS_NM_MUN": "Saint-Jacques-le-Mineur",
+          "MUS_CO_MRC": "68",
+          "MUS_NM_MRC": "Les Jardins-de-Napierville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "68035",
+          "MUS_NM_MUN": "Saint-Cyprien-de-Napierville",
+          "MUS_CO_MRC": "68",
+          "MUS_NM_MRC": "Les Jardins-de-Napierville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "67015",
+          "MUS_NM_MUN": "La Prairie",
+          "MUS_CO_MRC": "67",
+          "MUS_NM_MRC": "Roussillon",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "56065",
+          "MUS_NM_MUN": "Saint-Blaise-sur-Richelieu",
+          "MUS_CO_MRC": "56",
+          "MUS_NM_MRC": "Le Haut-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Granby",
+        "id": "47017"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "46078",
+          "MUS_NM_MUN": "Bromont",
+          "MUS_CO_MRC": "46",
+          "MUS_NM_MRC": "Brome-Missisquoi",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "55008",
+          "MUS_NM_MUN": "Ange-Gardien",
+          "MUS_CO_MRC": "55",
+          "MUS_NM_MRC": "Rouville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "47047",
+          "MUS_NM_MUN": "Roxton Pond",
+          "MUS_CO_MRC": "47",
+          "MUS_NM_MRC": "La Haute-Yamaska",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "47010",
+          "MUS_NM_MUN": "Saint-Alphonse-de-Granby",
+          "MUS_CO_MRC": "47",
+          "MUS_NM_MRC": "La Haute-Yamaska",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "47055",
+          "MUS_NM_MUN": "Sainte-Cécile-de-Milton",
+          "MUS_CO_MRC": "47",
+          "MUS_NM_MRC": "La Haute-Yamaska",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "47035",
+          "MUS_NM_MUN": "Shefford",
+          "MUS_CO_MRC": "47",
+          "MUS_NM_MRC": "La Haute-Yamaska",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "55015",
+          "MUS_NM_MUN": "Saint-Paul-d'Abbotsford",
+          "MUS_CO_MRC": "55",
+          "MUS_NM_MRC": "Rouville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Sherbrooke",
+        "id": "43027"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "45055",
+          "MUS_NM_MUN": "Hatley",
+          "MUS_CO_MRC": "45",
+          "MUS_NM_MRC": "Memphrémagog",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "45072",
+          "MUS_NM_MUN": "Magog",
+          "MUS_CO_MRC": "45",
+          "MUS_NM_MRC": "Memphrémagog",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "45115",
+          "MUS_NM_MUN": "Orford",
+          "MUS_CO_MRC": "45",
+          "MUS_NM_MRC": "Memphrémagog",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "42990",
+          "MUS_NM_MUN": "TNO aquatique de la MRC du Val-Saint-François",
+          "MUS_CO_MRC": "42",
+          "MUS_NM_MRC": "Le Val-Saint-François",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "44080",
+          "MUS_NM_MUN": "Waterville",
+          "MUS_CO_MRC": "44",
+          "MUS_NM_MRC": "Coaticook",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "45060",
+          "MUS_NM_MUN": "Sainte-Catherine-de-Hatley",
+          "MUS_CO_MRC": "45",
+          "MUS_NM_MRC": "Memphrémagog",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "41038",
+          "MUS_NM_MUN": "Cookshire-Eaton",
+          "MUS_CO_MRC": "41",
+          "MUS_NM_MRC": "Le Haut-Saint-François",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "42005",
+          "MUS_NM_MUN": "Stoke",
+          "MUS_CO_MRC": "42",
+          "MUS_NM_MRC": "Le Val-Saint-François",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "42020",
+          "MUS_NM_MUN": "Saint-François-Xavier-de-Brompton",
+          "MUS_CO_MRC": "42",
+          "MUS_NM_MRC": "Le Val-Saint-François",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "42095",
+          "MUS_NM_MUN": "Val-Joli",
+          "MUS_CO_MRC": "42",
+          "MUS_NM_MRC": "Le Val-Saint-François",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "41055",
+          "MUS_NM_MUN": "Ascot Corner",
+          "MUS_CO_MRC": "41",
+          "MUS_NM_MRC": "Le Haut-Saint-François",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "42025",
+          "MUS_NM_MUN": "Saint-Denis-de-Brompton",
+          "MUS_CO_MRC": "42",
+          "MUS_NM_MRC": "Le Val-Saint-François",
+          "MUS_CO_REG": "05",
+          "MUS_NM_REG": "Estrie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Drummondville",
+        "id": "49058"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "49040",
+          "MUS_NM_MUN": "Wickham",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "49025",
+          "MUS_NM_MUN": "L'Avenir",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "49070",
+          "MUS_NM_MUN": "Saint-Cyrille-de-Wendover",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "49030",
+          "MUS_NM_MUN": "Saint-Lucien",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "50095",
+          "MUS_NM_MUN": "Saint-Elphège",
+          "MUS_CO_MRC": "50",
+          "MUS_NM_MRC": "Nicolet-Yamaska",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "49095",
+          "MUS_NM_MUN": "Saint-Majorique-de-Grantham",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "49125",
+          "MUS_NM_MUN": "Saint-Bonaventure",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "49085",
+          "MUS_NM_MUN": "Sainte-Brigitte-des-Saults",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "49048",
+          "MUS_NM_MUN": "Saint-Germain-de-Grantham",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "50090",
+          "MUS_NM_MUN": "Saint-Zéphirin-de-Courval",
+          "MUS_CO_MRC": "50",
+          "MUS_NM_MRC": "Nicolet-Yamaska",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "49020",
+          "MUS_NM_MUN": "Lefebvre",
+          "MUS_CO_MRC": "49",
+          "MUS_NM_MRC": "Drummond",
+          "MUS_CO_REG": "17",
+          "MUS_NM_REG": "Centre-du-Québec",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Varennes",
+        "id": "59020"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "59015",
+          "MUS_NM_MUN": "Saint-Amable",
+          "MUS_CO_MRC": "59",
+          "MUS_NM_MRC": "Marguerite-D'Youville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "60013",
+          "MUS_NM_MUN": "Repentigny",
+          "MUS_CO_MRC": "60",
+          "MUS_NM_MRC": "L'Assomption",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "58033",
+          "MUS_NM_MUN": "Boucherville",
+          "MUS_CO_MRC": "58",
+          "MUS_NM_MRC": "Longueuil",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "66023",
+          "MUS_NM_MUN": "Montréal",
+          "MUS_CO_MRC": "66",
+          "MUS_NM_MRC": "Montréal",
+          "MUS_CO_REG": "06",
+          "MUS_NM_REG": "Montréal",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "59025",
+          "MUS_NM_MUN": "Verchères",
+          "MUS_CO_MRC": "59",
+          "MUS_NM_MRC": "Marguerite-D'Youville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "59010",
+          "MUS_NM_MUN": "Sainte-Julie",
+          "MUS_CO_MRC": "59",
+          "MUS_NM_MRC": "Marguerite-D'Youville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Beloeil",
+        "id": "57040"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "57050",
+          "MUS_NM_MUN": "Saint-Marc-sur-Richelieu",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57025",
+          "MUS_NM_MUN": "McMasterville",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57035",
+          "MUS_NM_MUN": "Mont-Saint-Hilaire",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57030",
+          "MUS_NM_MUN": "Otterburn Park",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57045",
+          "MUS_NM_MUN": "Saint-Mathieu-de-Beloeil",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57020",
+          "MUS_NM_MUN": "Saint-Basile-le-Grand",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Sainte-Julie",
+        "id": "59010"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "59015",
+          "MUS_NM_MUN": "Saint-Amable",
+          "MUS_CO_MRC": "59",
+          "MUS_NM_MRC": "Marguerite-D'Youville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "58033",
+          "MUS_NM_MUN": "Boucherville",
+          "MUS_CO_MRC": "58",
+          "MUS_NM_MRC": "Longueuil",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "59020",
+          "MUS_NM_MUN": "Varennes",
+          "MUS_CO_MRC": "59",
+          "MUS_NM_MRC": "Marguerite-D'Youville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "58037",
+          "MUS_NM_MUN": "Saint-Bruno-de-Montarville",
+          "MUS_CO_MRC": "58",
+          "MUS_NM_MRC": "Longueuil",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57045",
+          "MUS_NM_MUN": "Saint-Mathieu-de-Beloeil",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57020",
+          "MUS_NM_MUN": "Saint-Basile-le-Grand",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Saint-Bruno-de-Montarville",
+        "id": "58037"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "58033",
+          "MUS_NM_MUN": "Boucherville",
+          "MUS_CO_MRC": "58",
+          "MUS_NM_MRC": "Longueuil",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57010",
+          "MUS_NM_MUN": "Carignan",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "59010",
+          "MUS_NM_MUN": "Sainte-Julie",
+          "MUS_CO_MRC": "59",
+          "MUS_NM_MRC": "Marguerite-D'Youville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "57020",
+          "MUS_NM_MUN": "Saint-Basile-le-Grand",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "58227",
+          "MUS_NM_MUN": "Longueuil",
+          "MUS_CO_MRC": "58",
+          "MUS_NM_MRC": "Longueuil",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Chambly",
+        "id": "57005"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "57010",
+          "MUS_NM_MUN": "Carignan",
+          "MUS_CO_MRC": "57",
+          "MUS_NM_MRC": "La Vallée-du-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "55057",
+          "MUS_NM_MUN": "Richelieu",
+          "MUS_CO_MRC": "55",
+          "MUS_NM_MRC": "Rouville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "55065",
+          "MUS_NM_MUN": "Saint-Mathias-sur-Richelieu",
+          "MUS_CO_MRC": "55",
+          "MUS_NM_MRC": "Rouville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "56083",
+          "MUS_NM_MUN": "Saint-Jean-sur-Richelieu",
+          "MUS_CO_MRC": "56",
+          "MUS_NM_MRC": "Le Haut-Richelieu",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Laval",
+        "id": "65005"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "72005",
+          "MUS_NM_MUN": "Saint-Eustache",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72010",
+          "MUS_NM_MUN": "Deux-Montagnes",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "66990",
+          "MUS_NM_MUN": "TNO aquatique de la MRC géographique de Montréal",
+          "MUS_CO_MRC": "66",
+          "MUS_NM_MRC": "Montréal",
+          "MUS_CO_REG": "06",
+          "MUS_NM_REG": "Montréal",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73005",
+          "MUS_NM_MUN": "Boisbriand",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73025",
+          "MUS_NM_MUN": "Lorraine",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "64008",
+          "MUS_NM_MUN": "Terrebonne",
+          "MUS_CO_MRC": "64",
+          "MUS_NM_MRC": "Les Moulins",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "66023",
+          "MUS_NM_MUN": "Montréal",
+          "MUS_CO_MRC": "66",
+          "MUS_NM_MRC": "Montréal",
+          "MUS_CO_REG": "06",
+          "MUS_NM_REG": "Montréal",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73030",
+          "MUS_NM_MUN": "Bois-des-Filion",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73020",
+          "MUS_NM_MUN": "Rosemère",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Pointe-Calumet",
+        "id": "72020"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "66023",
+          "MUS_NM_MUN": "Montréal",
+          "MUS_CO_MRC": "66",
+          "MUS_NM_MRC": "Montréal",
+          "MUS_CO_REG": "06",
+          "MUS_NM_REG": "Montréal",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72025",
+          "MUS_NM_MUN": "Saint-Joseph-du-Lac",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72015",
+          "MUS_NM_MUN": "Sainte-Marthe-sur-le-Lac",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72032",
+          "MUS_NM_MUN": "Oka",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Deux-Montagnes",
+        "id": "72010"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "72005",
+          "MUS_NM_MUN": "Saint-Eustache",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "66023",
+          "MUS_NM_MUN": "Montréal",
+          "MUS_CO_MRC": "66",
+          "MUS_NM_MRC": "Montréal",
+          "MUS_CO_REG": "06",
+          "MUS_NM_REG": "Montréal",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72015",
+          "MUS_NM_MUN": "Sainte-Marthe-sur-le-Lac",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "65005",
+          "MUS_NM_MUN": "Laval",
+          "MUS_CO_MRC": "65",
+          "MUS_NM_MRC": "Laval",
+          "MUS_CO_REG": "13",
+          "MUS_NM_REG": "Laval",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Saint-Eustache",
+        "id": "72005"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "72010",
+          "MUS_NM_MUN": "Deux-Montagnes",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73005",
+          "MUS_NM_MUN": "Boisbriand",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72025",
+          "MUS_NM_MUN": "Saint-Joseph-du-Lac",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72015",
+          "MUS_NM_MUN": "Sainte-Marthe-sur-le-Lac",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "65005",
+          "MUS_NM_MUN": "Laval",
+          "MUS_CO_MRC": "65",
+          "MUS_NM_MRC": "Laval",
+          "MUS_CO_REG": "13",
+          "MUS_NM_REG": "Laval",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "74005",
+          "MUS_NM_MUN": "Mirabel",
+          "MUS_CO_MRC": "74",
+          "MUS_NM_MRC": "Mirabel",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Boisbriand",
+        "id": "73005"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "72005",
+          "MUS_NM_MUN": "Saint-Eustache",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73010",
+          "MUS_NM_MUN": "Sainte-Thérèse",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73020",
+          "MUS_NM_MUN": "Rosemère",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "65005",
+          "MUS_NM_MUN": "Laval",
+          "MUS_CO_MRC": "65",
+          "MUS_NM_MRC": "Laval",
+          "MUS_CO_REG": "13",
+          "MUS_NM_REG": "Laval",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "74005",
+          "MUS_NM_MUN": "Mirabel",
+          "MUS_CO_MRC": "74",
+          "MUS_NM_MRC": "Mirabel",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Mirabel",
+        "id": "74005"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "76008",
+          "MUS_NM_MUN": "Saint-André-d'Argenteuil",
+          "MUS_CO_MRC": "76",
+          "MUS_NM_MRC": "Argenteuil",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72005",
+          "MUS_NM_MUN": "Saint-Eustache",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73010",
+          "MUS_NM_MUN": "Sainte-Thérèse",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73005",
+          "MUS_NM_MUN": "Boisbriand",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "75017",
+          "MUS_NM_MUN": "Saint-Jérôme",
+          "MUS_CO_MRC": "75",
+          "MUS_NM_MRC": "La Rivière-du-Nord",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "75028",
+          "MUS_NM_MUN": "Sainte-Sophie",
+          "MUS_CO_MRC": "75",
+          "MUS_NM_MRC": "La Rivière-du-Nord",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "75990",
+          "MUS_NM_MUN": "TNO aquatique de la MRC de La Rivière-du-Nord",
+          "MUS_CO_MRC": "75",
+          "MUS_NM_MRC": "La Rivière-du-Nord",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73035",
+          "MUS_NM_MUN": "Sainte-Anne-des-Plaines",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72025",
+          "MUS_NM_MUN": "Saint-Joseph-du-Lac",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72043",
+          "MUS_NM_MUN": "Saint-Placide",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72032",
+          "MUS_NM_MUN": "Oka",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "72802",
+          "MUS_NM_MUN": "Kanesatake",
+          "MUS_CO_MRC": "72",
+          "MUS_NM_MRC": "Deux-Montagnes",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73015",
+          "MUS_NM_MUN": "Blainville",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "75005",
+          "MUS_NM_MUN": "Saint-Colomban",
+          "MUS_CO_MRC": "75",
+          "MUS_NM_MRC": "La Rivière-du-Nord",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "76020",
+          "MUS_NM_MUN": "Lachute",
+          "MUS_CO_MRC": "76",
+          "MUS_NM_MRC": "Argenteuil",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Saint-Jérôme",
+        "id": "75017"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "75028",
+          "MUS_NM_MUN": "Sainte-Sophie",
+          "MUS_CO_MRC": "75",
+          "MUS_NM_MRC": "La Rivière-du-Nord",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "77035",
+          "MUS_NM_MUN": "Sainte-Anne-des-Lacs",
+          "MUS_CO_MRC": "77",
+          "MUS_NM_MRC": "Les Pays-d'en-Haut",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "75005",
+          "MUS_NM_MUN": "Saint-Colomban",
+          "MUS_CO_MRC": "75",
+          "MUS_NM_MRC": "La Rivière-du-Nord",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "75040",
+          "MUS_NM_MUN": "Prévost",
+          "MUS_CO_MRC": "75",
+          "MUS_NM_MRC": "La Rivière-du-Nord",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "74005",
+          "MUS_NM_MUN": "Mirabel",
+          "MUS_CO_MRC": "74",
+          "MUS_NM_MRC": "Mirabel",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "76030",
+          "MUS_NM_MUN": "Mille-Isles",
+          "MUS_CO_MRC": "76",
+          "MUS_NM_MRC": "Argenteuil",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Terrebonne",
+        "id": "64008"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "60013",
+          "MUS_NM_MUN": "Repentigny",
+          "MUS_CO_MRC": "60",
+          "MUS_NM_MRC": "L'Assomption",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73025",
+          "MUS_NM_MUN": "Lorraine",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "75028",
+          "MUS_NM_MUN": "Sainte-Sophie",
+          "MUS_CO_MRC": "75",
+          "MUS_NM_MRC": "La Rivière-du-Nord",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "66023",
+          "MUS_NM_MUN": "Montréal",
+          "MUS_CO_MRC": "66",
+          "MUS_NM_MRC": "Montréal",
+          "MUS_CO_REG": "06",
+          "MUS_NM_REG": "Montréal",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73035",
+          "MUS_NM_MUN": "Sainte-Anne-des-Plaines",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "64015",
+          "MUS_NM_MUN": "Mascouche",
+          "MUS_CO_MRC": "64",
+          "MUS_NM_MRC": "Les Moulins",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "60005",
+          "MUS_NM_MUN": "Charlemagne",
+          "MUS_CO_MRC": "60",
+          "MUS_NM_MRC": "L'Assomption",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73015",
+          "MUS_NM_MUN": "Blainville",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "63035",
+          "MUS_NM_MUN": "Saint-Roch-de-l'Achigan",
+          "MUS_CO_MRC": "63",
+          "MUS_NM_MRC": "Montcalm",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "73030",
+          "MUS_NM_MUN": "Bois-des-Filion",
+          "MUS_CO_MRC": "73",
+          "MUS_NM_MRC": "Thérèse-De Blainville",
+          "MUS_CO_REG": "15",
+          "MUS_NM_REG": "Laurentides",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "65005",
+          "MUS_NM_MUN": "Laval",
+          "MUS_CO_MRC": "65",
+          "MUS_NM_MRC": "Laval",
+          "MUS_CO_REG": "13",
+          "MUS_NM_REG": "Laval",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "63048",
+          "MUS_NM_MUN": "Saint-Lin–Laurentides",
+          "MUS_CO_MRC": "63",
+          "MUS_NM_MRC": "Montcalm",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Repentigny",
+        "id": "60013"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "60020",
+          "MUS_NM_MUN": "Saint-Sulpice",
+          "MUS_CO_MRC": "60",
+          "MUS_NM_MRC": "L'Assomption",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "60037",
+          "MUS_NM_MUN": "L'Épiphanie",
+          "MUS_CO_MRC": "60",
+          "MUS_NM_MRC": "L'Assomption",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "60028",
+          "MUS_NM_MUN": "L'Assomption",
+          "MUS_CO_MRC": "60",
+          "MUS_NM_MRC": "L'Assomption",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "64008",
+          "MUS_NM_MUN": "Terrebonne",
+          "MUS_CO_MRC": "64",
+          "MUS_NM_MRC": "Les Moulins",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "66023",
+          "MUS_NM_MUN": "Montréal",
+          "MUS_CO_MRC": "66",
+          "MUS_NM_MRC": "Montréal",
+          "MUS_CO_REG": "06",
+          "MUS_NM_REG": "Montréal",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "59025",
+          "MUS_NM_MUN": "Verchères",
+          "MUS_CO_MRC": "59",
+          "MUS_NM_MRC": "Marguerite-D'Youville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "64015",
+          "MUS_NM_MUN": "Mascouche",
+          "MUS_CO_MRC": "64",
+          "MUS_NM_MRC": "Les Moulins",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "59020",
+          "MUS_NM_MUN": "Varennes",
+          "MUS_CO_MRC": "59",
+          "MUS_NM_MRC": "Marguerite-D'Youville",
+          "MUS_CO_REG": "16",
+          "MUS_NM_REG": "Montérégie",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "60005",
+          "MUS_NM_MUN": "Charlemagne",
+          "MUS_CO_MRC": "60",
+          "MUS_NM_MRC": "L'Assomption",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Joliette",
+        "id": "61025"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "61027",
+          "MUS_NM_MUN": "Saint-Thomas",
+          "MUS_CO_MRC": "61",
+          "MUS_NM_MRC": "Joliette",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "61030",
+          "MUS_NM_MUN": "Notre-Dame-des-Prairies",
+          "MUS_CO_MRC": "61",
+          "MUS_NM_MRC": "Joliette",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "61020",
+          "MUS_NM_MUN": "Saint-Pierre",
+          "MUS_CO_MRC": "61",
+          "MUS_NM_MRC": "Joliette",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "61005",
+          "MUS_NM_MUN": "Saint-Paul",
+          "MUS_CO_MRC": "61",
+          "MUS_NM_MRC": "Joliette",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "61035",
+          "MUS_NM_MUN": "Saint-Charles-Borromée",
+          "MUS_CO_MRC": "61",
+          "MUS_NM_MRC": "Joliette",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    },
+    {
+      "anchor": {
+        "name": "Rawdon",
+        "id": "62037"
+      },
+      "neighbours": [
+        {
+          "MUS_CO_GEO": "62025",
+          "MUS_NM_MUN": "Saint-Alphonse-Rodriguez",
+          "MUS_CO_MRC": "62",
+          "MUS_NM_MRC": "Matawinie",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "61040",
+          "MUS_NM_MUN": "Saint-Ambroise-de-Kildare",
+          "MUS_CO_MRC": "61",
+          "MUS_NM_MRC": "Joliette",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "63055",
+          "MUS_NM_MUN": "Saint-Calixte",
+          "MUS_CO_MRC": "63",
+          "MUS_NM_MRC": "Montcalm",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "63065",
+          "MUS_NM_MUN": "Saint-Liguori",
+          "MUS_CO_MRC": "63",
+          "MUS_NM_MRC": "Montcalm",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "62030",
+          "MUS_NM_MUN": "Sainte-Marcelline-de-Kildare",
+          "MUS_CO_MRC": "62",
+          "MUS_NM_MRC": "Matawinie",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "62047",
+          "MUS_NM_MUN": "Chertsey",
+          "MUS_CO_MRC": "62",
+          "MUS_NM_MRC": "Matawinie",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        },
+        {
+          "MUS_CO_GEO": "63060",
+          "MUS_NM_MUN": "Sainte-Julienne",
+          "MUS_CO_MRC": "63",
+          "MUS_NM_MRC": "Montcalm",
+          "MUS_CO_REG": "14",
+          "MUS_NM_REG": "Lanaudière",
+          "MUS_CO_VER": "V2026-09"
+        }
+      ]
+    }
+  ]
+}

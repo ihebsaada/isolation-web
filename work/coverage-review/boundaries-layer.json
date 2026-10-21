@@ -1,0 +1,426 @@
+{
+ "currentVersion": 11.5,
+ "cimVersion": "3.5.0",
+ "id": 2,
+ "name": "Municipalité",
+ "type": "Feature Layer",
+ "description": "Territoire sur lequel s'exerce un gouvernement local conformément aux lois municipales.",
+ "geometryType": "esriGeometryPolygon",
+ "sourceSpatialReference": {
+  "wkid": 4269,
+  "latestWkid": 4269,
+  "xyTolerance": 8.983152841195213E-9,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -399.9999999999999,
+  "falseY": -399.9999999999999,
+  "xyUnits": 1.0000000000000001E9,
+  "falseZ": -100000,
+  "zUnits": 10000,
+  "falseM": -100000,
+  "mUnits": 10000
+ },
+ "spatialReference": {
+  "wkid": 102100,
+  "latestWkid": 3857,
+  "xyTolerance": 0.001,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -20037700,
+  "falseY": -30241100,
+  "xyUnits": 1.4892314192838538E8,
+  "falseZ": -100000,
+  "zUnits": 10000,
+  "falseM": -100000,
+  "mUnits": 10000
+ },
+ "copyrightText": "Ministère de l'Énergie et des Ressources naturelles",
+ "parentLayer": null,
+ "subLayers": [],
+ "minScale": 0,
+ "maxScale": 0,
+ "referenceScale": 0.0,
+ "drawingInfo": {
+  "renderer": {
+   "type": "simple",
+   "symbol": {
+    "type": "esriSFS",
+    "style": "esriSFSSolid",
+    "color": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "outline": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "color": [
+      145,
+      90,
+      35,
+      255
+     ],
+     "width": 3
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": [
+   {
+    "labelExpression": "[MUS_NM_MUN]",
+    "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+    "removeDuplicates": "all",
+    "removeDuplicatesDistance": 0,
+    "multiPart": "labelLargest",
+    "deconflictionStrategy": "dynamic",
+    "repeatLabel": false,
+    "allowOverrun": false,
+    "stackLabel": false,
+    "useCodedValues": true,
+    "maxScale": 100001,
+    "minScale": 0,
+    "name": "Provinciale",
+    "priority": 3,
+    "symbol": {
+     "type": "esriTS",
+     "color": [
+      176,
+      120,
+      0,
+      255
+     ],
+     "backgroundColor": null,
+     "borderLineColor": null,
+     "borderLineSize": null,
+     "verticalAlignment": "bottom",
+     "horizontalAlignment": "left",
+     "rightToLeft": false,
+     "angle": 0,
+     "xoffset": 0,
+     "yoffset": 0,
+     "kerning": true,
+     "haloColor": [
+      250,
+      250,
+      250,
+      255
+     ],
+     "haloSize": 1.33,
+     "font": {
+      "family": "Arial",
+      "size": 8.5,
+      "style": "normal",
+      "weight": "bold",
+      "decoration": "none"
+     }
+    }
+   },
+   {
+    "labelExpression": "[MUS_NM_MUN]",
+    "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+    "removeDuplicates": "all",
+    "removeDuplicatesDistance": 0,
+    "multiPart": "labelLargest",
+    "deconflictionStrategy": "dynamic",
+    "repeatLabel": false,
+    "allowOverrun": false,
+    "stackLabel": false,
+    "useCodedValues": true,
+    "maxScale": 1,
+    "minScale": 100000,
+    "name": "Régionale",
+    "priority": 4,
+    "symbol": {
+     "type": "esriTS",
+     "color": [
+      176,
+      120,
+      0,
+      255
+     ],
+     "backgroundColor": null,
+     "borderLineColor": null,
+     "borderLineSize": null,
+     "verticalAlignment": "bottom",
+     "horizontalAlignment": "left",
+     "rightToLeft": false,
+     "angle": 0,
+     "xoffset": 0,
+     "yoffset": 0,
+     "kerning": true,
+     "haloColor": [
+      250,
+      250,
+      250,
+      255
+     ],
+     "haloSize": 1.33,
+     "font": {
+      "family": "Arial",
+      "size": 11,
+      "style": "normal",
+      "weight": "bold",
+      "decoration": "none"
+     }
+    }
+   }
+  ]
+ },
+ "defaultVisibility": true,
+ "extent": {
+  "xmin": -8879435.28025146,
+  "ymin": 5620161.353330964,
+  "xmax": -6337967.049041623,
+  "ymax": 8998594.895117966,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857,
+   "xyTolerance": 0.001,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -20037700,
+   "falseY": -30241100,
+   "xyUnits": 1.4892314192838538E8,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "displayField": "MUS_CO_GEO",
+ "typeIdField": null,
+ "subtypeFieldName": null,
+ "subtypeField": null,
+ "defaultSubtypeCode": null,
+ "fields": [
+  {
+   "name": "MUS_CO_GEO",
+   "type": "esriFieldTypeString",
+   "alias": "Code_géographique",
+   "length": 5,
+   "domain": null
+  },
+  {
+   "name": "MUS_DE_IND",
+   "type": "esriFieldTypeString",
+   "alias": "Description",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "MUS_CO_DES",
+   "type": "esriFieldTypeString",
+   "alias": "Code_de_désignation",
+   "length": 2,
+   "domain": null
+  },
+  {
+   "name": "MUS_NM_MUN",
+   "type": "esriFieldTypeString",
+   "alias": "Nom_de_municipalité",
+   "length": 64,
+   "domain": null
+  },
+  {
+   "name": "MUS_CO_MRC",
+   "type": "esriFieldTypeString",
+   "alias": "Code_de_MRC",
+   "length": 3,
+   "domain": null
+  },
+  {
+   "name": "MUS_NM_MRC",
+   "type": "esriFieldTypeString",
+   "alias": "Nom_de_MRC",
+   "length": 64,
+   "domain": null
+  },
+  {
+   "name": "MUS_CO_REG",
+   "type": "esriFieldTypeString",
+   "alias": "Code_de_région",
+   "length": 2,
+   "domain": null
+  },
+  {
+   "name": "MUS_NM_REG",
+   "type": "esriFieldTypeString",
+   "alias": "Nom_de_région",
+   "length": 64,
+   "domain": null
+  },
+  {
+   "name": "MUS_NM_AGG",
+   "type": "esriFieldTypeString",
+   "alias": "Nom_agglomération",
+   "length": 64,
+   "domain": null
+  },
+  {
+   "name": "MUS_NM_COM",
+   "type": "esriFieldTypeString",
+   "alias": "Nom_de_communauté_métropolitaine",
+   "length": 64,
+   "domain": null
+  },
+  {
+   "name": "MUS_CO_VER",
+   "type": "esriFieldTypeString",
+   "alias": "Version",
+   "length": 8,
+   "domain": null
+  },
+  {
+   "name": "MUS_VA_SUP",
+   "type": "esriFieldTypeInteger",
+   "alias": "Superficie_km2",
+   "domain": null
+  },
+  {
+   "name": "SITE_WEB",
+   "type": "esriFieldTypeString",
+   "alias": "Site_Web",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "COURRIEL",
+   "type": "esriFieldTypeString",
+   "alias": "Courriel",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "Numéro_séquence",
+   "domain": null
+  },
+  {
+   "name": "SHAPE",
+   "type": "esriFieldTypeGeometry",
+   "alias": "Géométrie",
+   "domain": null
+  },
+  {
+   "name": "MUS_NM_NMC",
+   "type": "esriFieldTypeString",
+   "alias": "MUS_NM_NMC",
+   "length": 150,
+   "domain": null
+  },
+  {
+   "name": "MUS_CO_COM",
+   "type": "esriFieldTypeString",
+   "alias": "MUS_CO_COM",
+   "length": 3,
+   "domain": null
+  },
+  {
+   "name": "MUS_VA_PER",
+   "type": "esriFieldTypeInteger",
+   "alias": "MUS_VA_PER",
+   "domain": null
+  },
+  {
+   "name": "TELEPHONE",
+   "type": "esriFieldTypeString",
+   "alias": "TELEPHONE",
+   "length": 12,
+   "domain": null
+  }
+ ],
+ "geometryField": {
+  "name": "SHAPE",
+  "type": "esriFieldTypeGeometry",
+  "alias": "Géométrie"
+ },
+ "indexes": [
+  {
+   "name": "FDO_OBJECTID",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "SHAPE_INDEX",
+   "fields": "SHAPE",
+   "isAscending": true,
+   "isUnique": false,
+   "description": ""
+  }
+ ],
+ "subtypes": [],
+ "relationships": [],
+ "canModifyLayer": true,
+ "canScaleSymbols": false,
+ "hasLabels": true,
+ "capabilities": "Map,Query,Data",
+ "maxRecordCount": 2000,
+ "maxSelectionCount": 2000,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "isDataVersioned": false,
+ "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+ "useStandardizedQueries": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "advancedQueryCapabilities": {
+  "useStandardizedQueries": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsPagination": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsReturningQueryExtent": true,
+  "supportsQueryWithDistance": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsSqlFormat": false,
+  "supportsQueryAnalytic": false,
+  "supportsCurrentUserQueries": true
+ },
+ "supportsDatumTransformation": true,
+ "dateFieldsTimeReference": null,
+ "preferredTimeReference": null,
+ "datesInUnknownTimezone": false,
+ "hasGeometryProperties": true,
+ "geometryProperties": {
+  "shapeAreaFieldName": "SHAPE_Area",
+  "shapeLengthFieldName": "SHAPE_Length",
+  "units": "esriDecimalDegrees",
+  "mapUnits": {"uwkid": 9102}
+ },
+ "hasMetadata": true,
+ "isDataArchived": false,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsCoordinatesQuantization": true,
+ "supportsDynamicLegends": true
+}

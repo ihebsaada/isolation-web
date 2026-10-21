@@ -1,4 +1,6 @@
 import { needs, timings, serviceCoverage } from "../data/isolation.ts";
+import { normalizeProject } from './project-normalization.ts';
+import { contactConsentVersion } from '../data/privacy.ts';
 import {
   coverageStatus,
   normalizePostalCode,
@@ -77,6 +79,7 @@ export function classify(
   project: Project,
   coverage: Coverage = serviceCoverage,
 ): Qualification | null {
+  project = normalizeProject(project);
   const area = coverageStatus(project.city, project.postalCode, coverage);
   if (project.postalCode.trim() && area === "invalid") return "invalid";
   if (area === "outside") return "out_of_area";
@@ -92,6 +95,7 @@ export function classify(
   return "qualified";
 }
 export function validateStep(step: number, project: Project): string | null {
+  project = normalizeProject(project);
   if (
     step === 0 &&
     (project.city.trim().length < 2 || !validPostalCode(project.postalCode))
@@ -120,7 +124,7 @@ export function validateStep(step: number, project: Project): string | null {
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(project.email.trim())
     )
       return "Indiquez une adresse courriel valide.";
-    if (!project.consent)
+    if (project.consent !== true)
       return "Votre consentement au rappel est nécessaire pour préparer cette demande.";
   }
   return null;
@@ -130,6 +134,7 @@ export function buildLead(
   attribution: Attribution,
   coverage: Coverage = serviceCoverage,
 ) {
+  project = normalizeProject(project);
   const classification = classify(project, coverage);
   const timestamp = new Date().toISOString();
   return {
@@ -145,16 +150,16 @@ export function buildLead(
       postalCode: normalizePostalCode(project.postalCode),
     },
     classification,
+    // This flag describes unresolved service coverage, never contact/consent
+    // incompleteness and never an automatic assessment of weak intent.
     qualification_pending:
-      classification === null ||
-      (classification === "low_intent" &&
-        coverageStatus(project.city, project.postalCode, coverage) ===
-          "pending"),
+      (classification === null || classification === 'low_intent') &&
+      coverageStatus(project.city, project.postalCode, coverage) === 'pending',
     coverage_status: coverageStatus(project.city, project.postalCode, coverage),
     consent: {
       accepted: project.consent,
       timestamp: project.consent ? timestamp : null,
-      version: "isolation-v1",
+      version: contactConsentVersion,
       purpose: "rappel_isolation",
     },
     delivery: "not_sent" as const,

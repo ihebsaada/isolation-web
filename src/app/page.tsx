@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { SiteFooter } from '@/components/site-footer';
 import { Brand, CTA } from '@/components/brand';
 import { needs, benefits, process } from '@/data/isolation';
 import { publicMetadata } from '@/lib/seo';
@@ -12,5 +13,5 @@ export default function Home() { return <>
     <section className="comfort"><div className="wrap comfort-grid"><figure><Image src="/assets/homes/isolation-confort-famille.png" alt="Un moment en famille dans un intérieur chaleureux" width={1024} height={1024} sizes="(max-width:700px) 100vw, 50vw"/></figure><div><p className="eyebrow">LE CONFORT, DE L’INTÉRIEUR</p><h2>Bien chez vous.<br/><em>Tout simplement.</em></h2><div className="benefits">{benefits.map(([title,text])=><article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div></div></div></section>
     <section className="section wrap process" id="approche"><div className="section-heading"><p className="eyebrow">UNE DÉMARCHE CLAIRE</p><h2>Votre maison.<br/>Votre projet. La suite, ensemble.</h2></div><ol>{process.map((text,i)=><li key={text}><span>0{i+1}</span><h3>{text}</h3></li>)}</ol></section>
     <section className="closing"><div className="wrap"><p className="eyebrow">FAISONS LE PREMIER PAS</p><h2>Parlons de votre<br/>projet d’isolation.</h2><CTA>Demander une estimation</CTA></div></section>
-  </main><footer className="footer wrap"><Brand/><details><summary>Confidentialité</summary><p>Les informations demandées servent à examiner votre projet d’isolation et, avec votre accord, à vous contacter à ce sujet. Indiquez uniquement les renseignements nécessaires à votre demande.</p></details><span>Isolation résidentielle</span></footer>
+  </main><SiteFooter/>
 </>; }
