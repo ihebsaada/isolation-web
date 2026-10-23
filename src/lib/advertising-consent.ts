@@ -20,10 +20,10 @@ export function advertisingConsent(): AdvertisingConsent | null {
 export function setAdvertisingConsent(choice: AdvertisingConsent) {
   choices.set(window, choice);
   try { sessionStorage.setItem(advertisingConsentKey, choice); } catch { /* Current-page choice still applies. */ }
-  if (window.fbq) {
+  if (window.fbq && !localMetaDiagnostic()) {
     // Remove events still waiting for the library when consent is withdrawn.
     if (choice === 'refused' && Array.isArray(window.fbq.queue)) {
-      window.fbq.queue = window.fbq.queue.filter(args => args[0] !== 'track' && args[0] !== 'trackCustom');
+      window.fbq.queue = window.fbq.queue.filter(args => !['track', 'trackCustom', 'trackSingle', 'trackSingleCustom'].includes(String(args[0])));
     }
     try { window.fbq('consent', choice === 'accepted' ? 'grant' : 'revoke'); } catch { /* Application guards still block events. */ }
   }
@@ -34,7 +34,16 @@ export function metaConfigured() {
   return process.env.NEXT_PUBLIC_META_PIXEL_ENABLED === 'true' && /^\d+$/.test(process.env.NEXT_PUBLIC_META_PIXEL_ID || '');
 }
 
+// Opt-in diagnostic only: production builds and public hosts always fail closed.
+export function localMetaDiagnostic() {
+  return process.env.NODE_ENV === 'development' &&
+    process.env.NEXT_PUBLIC_META_LOCAL_DIAGNOSTIC === 'true' &&
+    typeof window !== 'undefined' &&
+    ['127.0.0.1', 'localhost'].includes(window.location?.hostname);
+}
+
 export function canTrackMeta() {
   return metaConfigured() && typeof window !== 'undefined' &&
-    !window.location?.pathname.startsWith('/leads') && advertisingConsent() === 'accepted';
+    !window.location?.pathname.startsWith('/leads') &&
+    (localMetaDiagnostic() || advertisingConsent() === 'accepted');
 }

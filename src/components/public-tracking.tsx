@@ -1,20 +1,33 @@
 'use client';
-import Script from 'next/script';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
-import { initializePixel } from '@/lib/meta';
-import { advertisingConsent, canTrackMeta, metaConfigured, setAdvertisingConsent, subscribeAdvertisingConsent, type AdvertisingConsent } from '@/lib/advertising-consent';
+import { trackPublicVisit } from '@/lib/meta';
+import { advertisingConsent, localMetaDiagnostic, metaConfigured, setAdvertisingConsent, subscribeAdvertisingConsent, type AdvertisingConsent } from '@/lib/advertising-consent';
 export default function PublicTracking(){
-  const path=usePathname(),last=useRef('');
-  const id=process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const path=usePathname();
   const choice=useSyncExternalStore(subscribeAdvertisingConsent,advertisingConsent,()=>null);
+  const diagnostic=useSyncExternalStore(subscribeAdvertisingConsent,localMetaDiagnostic,()=>false);
   const [showChoices,setShowChoices]=useState(false);
+  const panel=useRef<HTMLElement>(null), opener=useRef<HTMLElement|null>(null);
+  const close=()=>{setShowChoices(false);opener.current?.focus();};
   const configured=metaConfigured();
-  const enabled=configured && choice==='accepted' && !path.startsWith('/leads');
+  const enabled=configured && (diagnostic || choice==='accepted') && !path.startsWith('/leads');
   const choose=(value:AdvertisingConsent)=>{
-    setAdvertisingConsent(value);setShowChoices(false);
+    setAdvertisingConsent(value);close();
   };
   useEffect(()=>{
+    const open=(event:Event)=>{
+      opener.current=event instanceof CustomEvent && event.detail instanceof HTMLElement ? event.detail : null;
+      setShowChoices(true);
+    };
+    const hash=()=>{if(location.hash==='#preferences-publicitaires')open(new Event('open'));};
+    window.addEventListener('open-advertising-preferences',open);
+    window.addEventListener('hashchange',hash);hash();
+    return ()=>{window.removeEventListener('open-advertising-preferences',open);window.removeEventListener('hashchange',hash);};
+  },[]);
+  useEffect(()=>{if(showChoices)panel.current?.focus();},[showChoices]);
+  useEffect(()=>{
+    trackPublicVisit(path);
     if(path.startsWith('/leads'))return;
     try{
       const params=new URLSearchParams(location.search);
@@ -26,15 +39,17 @@ export default function PublicTracking(){
       if(!attribution.referrer)attribution.referrer=document.referrer.slice(0,500);
       sessionStorage.setItem('lead-attribution',JSON.stringify(attribution));
     }catch{}
-    if(!enabled||!canTrackMeta()||last.current===path)return;
-    initializePixel(id!);window.fbq?.('track','PageView');window.fbq?.('track','ViewContent');last.current=path;
-  },[path,enabled,id]);
-  if(path.startsWith('/leads')||(!configured&&path!=='/confidentialite'))return null;
+  },[path,enabled]);
+  if(path.startsWith('/leads'))return null;
   return <>
-    {enabled&&<Script id="meta-pixel-library" src="https://connect.facebook.net/en_US/fbevents.js" strategy="afterInteractive"/>}
-    <aside id="preferences-publicitaires" tabIndex={-1} className="advertising-choice" aria-label="Préférences publicitaires">
+    {showChoices&&<aside ref={panel} id="preferences-publicitaires" tabIndex={-1} className="advertising-choice" aria-labelledby="advertising-title" onKeyDown={event=>{if(event.key==='Escape'){event.preventDefault();close();}}}>
+      <div className="advertising-choice-heading"><h2 id="advertising-title">Paramètres publicitaires</h2><button type="button" onClick={close} aria-label="Fermer les paramètres publicitaires">Fermer</button></div>
       {!configured&&<p>Le suivi publicitaire Meta est actuellement désactivé. Vous pouvez néanmoins gérer votre choix ci-dessous.</p>}
-      {showChoices||choice===null?<><p>Avec votre accord, le Pixel Meta transmet à Meta des informations sur vos visites et les demandes envoyées pour mesurer nos publicités. Vous pouvez refuser sans bloquer votre estimation. Ce choix est distinct du consentement au rappel.</p><p>Votre choix est mémorisé pour la session de cet onglet. Vous pouvez le modifier ici à tout moment.</p><div><button type="button" onClick={()=>choose('accepted')}>Accepter</button><button type="button" onClick={()=>choose('refused')}>Refuser</button></div></>:<><button type="button" onClick={()=>setShowChoices(true)}>Préférences publicitaires</button>{choice==='accepted'&&<button type="button" onClick={()=>choose('refused')}>Retirer mon accord publicitaire</button>}</>}
-    </aside>
+      {diagnostic&&<p>Diagnostic local actif : le suivi ignore temporairement votre choix sur cet ordinateur. Ce mode est bloqué en production.</p>}
+      <p>Avec votre accord, le Pixel Meta transmet à Meta des informations sur vos visites et les demandes envoyées pour mesurer nos publicités. Vous pouvez refuser sans bloquer votre estimation. Ce choix est distinct du consentement au rappel.</p>
+      <p>Votre choix est mémorisé pour la session de cet onglet et reste modifiable ici. <a href="/confidentialite">Lire la notice de confidentialité</a>.</p>
+      <p role="status">{choice==='accepted'?'Votre choix : suivi autorisé.':choice==='refused'?'Votre choix : suivi désactivé.':'Le suivi reste désactivé tant que vous ne l’acceptez pas.'}</p>
+      <div className="advertising-choice-actions"><button type="button" onClick={()=>choose('accepted')}>Accepter</button><button type="button" onClick={()=>choose('refused')}>{choice==='accepted'?'Désactiver le suivi':'Refuser'}</button></div>
+    </aside>}
   </>;
 }

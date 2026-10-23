@@ -1,3 +1,5 @@
+import { AdvertisingPreferencesLink } from './advertising-preferences-link';
+
 export function PrivacyNotice() {
   return <p className="fine-print privacy-summary">TechVoice reçoit et qualifie votre demande et peut vous rappeler au sujet de votre estimation. Les informations pertinentes peuvent être transmises à DEMCO, prestataire d’isolation. <a href="/confidentialite">Consulter la notice de confidentialité</a>.</p>;
 }
@@ -34,7 +36,7 @@ export function FullPrivacyNotice() {
     <section aria-labelledby="privacy-consent"><h2 id="privacy-consent">Suivi publicitaire Meta</h2>
     <p>Le consentement au rappel concerne votre demande d’estimation. Il ne vaut pas accord au suivi publicitaire Meta.</p>
     <p>Lorsque le suivi publicitaire est disponible, vous pouvez l’accepter ou le refuser séparément, puis modifier ce choix dans les préférences publicitaires. En cas d’acceptation, Meta peut recevoir des informations sur les pages consultées, les événements de demande, les identifiants de navigateur et des données techniques de connexion pour mesurer les publicités. Aucun chargement du Pixel n’a lieu avant acceptation; le refus n’empêche pas l’envoi de votre demande. Le choix est conservé pour la session de cet onglet. Le retrait arrête les prochains événements du site, sans effacer les données déjà transmises.</p>
-    <a href="#preferences-publicitaires">Gérer mes préférences publicitaires</a>
+    <AdvertisingPreferencesLink/>
     </section>
     <section className="privacy-validation" aria-labelledby="privacy-validation"><h2 id="privacy-validation">Informations en cours de validation</h2>
       <p>Les rôles ci-dessus sont opérationnels. Les informations juridiques suivantes restent à compléter avant validation de cette notice.</p>

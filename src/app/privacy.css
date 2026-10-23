@@ -19,3 +19,13 @@
 #preferences-publicitaires:focus-visible{outline:3px solid var(--forest);outline-offset:-3px}
 .advertising-choice{max-width:960px;margin-inline:auto}
 @media(max-width:700px){.footer-links{width:100%;gap:2px 20px}.privacy-page{padding-block:32px 40px}.privacy-page h2{font-size:25px}.privacy-return{font-size:14px}.privacy-page section{margin-top:28px;padding-top:22px}}
+.advertising-preferences-link{color:var(--muted);font-size:13px;line-height:1.5;display:inline-flex;align-items:center;min-height:44px;text-underline-offset:3px}
+.advertising-preferences-link:hover{text-decoration:underline}
+.estimation-preferences{max-width:680px;margin:0 auto;padding:0 24px 24px}
+.advertising-choice{max-width:640px;margin:0 auto 24px;padding:20px 24px;border:1px solid var(--rule);background:var(--surface);font-size:14px;line-height:1.6;scroll-margin-block:24px}
+.advertising-choice-heading{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+.advertising-choice-heading h2{font-size:23px;line-height:1.2;letter-spacing:-.02em}
+.advertising-choice a{text-decoration:underline;text-underline-offset:3px}
+.advertising-choice-actions{display:flex;flex-wrap:wrap;gap:8px}
+.advertising-choice button{margin:0;min-height:44px;border-color:var(--forest);color:var(--forest)}
+@media(max-width:700px){.advertising-choice{margin:0 14px 20px;padding:16px}.advertising-choice-heading{align-items:flex-start}.advertising-choice-heading h2{font-size:21px}.advertising-choice-heading button{padding-inline:10px}}
