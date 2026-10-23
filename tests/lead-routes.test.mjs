@@ -11,7 +11,7 @@ import { timings } from '../src/data/isolation.ts';
 
 // Execute the actual route/server/session modules with only the Next request
 // cookie context and external Google transport replaced by test doubles.
-function runtime(rows) {
+function runtime(rows, { rejectPending = false } = {}) {
   const require = createRequire(import.meta.url), cache = new Map();
   let cookie = '', unavailable = false;
   const context = { process, Request, Response, URL, URLSearchParams, AbortSignal, Date, crypto: globalThis.crypto,
@@ -22,6 +22,8 @@ function runtime(rows) {
       if (body.action === 'loginAttempt') return Response.json({ok:true,allowed:true});
       if (body.action === 'list') return Response.json({ok:true,leads:rows});
       if (body.action === 'append') {
+        // Published Apps Script v4 rejects this status before appending a row.
+        if (rejectPending && body.lead.qualification_status === 'pending') return Response.json({ok:false});
         const prior=rows.find(r=>r.lead_id===body.lead.lead_id);
         if(!prior)rows.push(body.lead);
         return Response.json({ok:true,lead:prior||body.lead});
@@ -127,6 +129,43 @@ test('actual lead routes: login, protected list, status/notes, both filtered exp
     assert.equal((await leads.POST(request('/api/leads','POST',submission))).status,503);
     assert.equal((await leads.GET(request('/api/leads'))).status,503);
     r.setCookie('');assert.equal((await leads.PATCH(request('/api/leads','PATCH',{}))).status,401);
+  } finally {
+    for(const key of names){if(original[key]===undefined)delete process.env[key];else process.env[key]=original[key];}
+  }
+});
+
+test('Montreal pending: legacy Apps Script HTTP 200/ok:false becomes 503 without a write; compatible storage accepts one retry', async () => {
+  const names=['NODE_ENV','VERCEL','GOOGLE_APPS_SCRIPT_URL','GOOGLE_APPS_SCRIPT_SECRET'];
+  const original=Object.fromEntries(names.map(k=>[k,process.env[k]]));
+  try {
+    process.env.NODE_ENV='development';delete process.env.VERCEL;
+    process.env.GOOGLE_APPS_SCRIPT_URL='https://script.google.com/macros/s/synthetic/exec';
+    process.env.GOOGLE_APPS_SCRIPT_SECRET='synthetic-integration-secret';
+    const project={...emptyProject,city:'Montreal',postalCode:'H2X1Y4',owner:'oui',detached:'oui',
+      estimate:'oui',need:'Murs',timing:timings[0],name:'Synthetic pending incident',phone:'5145550123',consent:true};
+    const submission={...buildLead(project,captureAttribution('')),website:''};
+    const rows=[];
+    const legacy=runtime(rows,{rejectPending:true}).load('src/app/api/leads/route.ts');
+    const request=()=>new Request('http://127.0.0.1:3012/api/leads',{method:'POST',
+      headers:{origin:'http://127.0.0.1:3012','Content-Type':'application/json'},body:JSON.stringify(submission)});
+    for(let retry=0;retry<2;retry++) {
+      const response=await legacy.POST(request());
+      assert.equal(response.status,503);
+      const body=await response.json();
+      assert.deepEqual(body,{error:'Persistence unavailable'});
+      assert.ok(!('accepted' in body));
+      assert.equal(rows.length,0);
+    }
+    const compatible=runtime(rows).load('src/app/api/leads/route.ts');
+    for(let retry=0;retry<2;retry++) {
+      const response=await compatible.POST(request());
+      assert.equal(response.status,200);
+      const receipt=await response.json();
+      assert.equal(receipt.lead_id,submission.lead_id);
+      assert.equal(receipt.qualification_status,'pending');
+      assert.equal(rows.length,1);
+      assert.equal(rows[0].qualification_pending,'true');
+    }
   } finally {
     for(const key of names){if(original[key]===undefined)delete process.env[key];else process.env[key]=original[key];}
   }
